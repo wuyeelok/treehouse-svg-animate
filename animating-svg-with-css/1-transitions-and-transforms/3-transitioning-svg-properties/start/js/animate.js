@@ -20,20 +20,22 @@ const heartBGHoverAnimation = new TimelineMax({paused: true})
 heartBGHoverAnimation.to(heartBGEle, .3, {ease: Power1.easeOut, fill: '#ff5e5e'})
 
 
-const iconHoverAnimateBind = (ele, animation) => {
+const iconHoverAnimateBind = (ele, animations) => {
     ele.addEventListener('mouseenter', () => {
-        animation.play()
-        hammerIconAnimation.play()
+       animations.forEach(animation => {
+            animation.play()
+       })
     })
 
     ele.addEventListener('mouseleave', () => {
-        animation.reverse()
-        hammerIconAnimation.reverse()
+        animations.forEach(animation => {
+            animation.reverse()
+       })
     })
 }
 
-iconHoverAnimateBind(gearBGEle, gearBGHoverAnimation)
+iconHoverAnimateBind(gearBGEle, [gearBGHoverAnimation])
 
-iconHoverAnimateBind(hammerBGEle, hammerBGHoverAnimation)
+iconHoverAnimateBind(hammerBGEle, [hammerBGHoverAnimation, hammerIconAnimation])
 
-iconHoverAnimateBind(heartBGEle, heartBGHoverAnimation)
+iconHoverAnimateBind(heartBGEle, [heartBGHoverAnimation])
