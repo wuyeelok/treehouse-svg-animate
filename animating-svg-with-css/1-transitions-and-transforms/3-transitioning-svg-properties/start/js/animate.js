@@ -9,6 +9,10 @@ const hammerBGEle = document.querySelector('.hammer-bg')
 const hammerBGHoverAnimation = new TimelineMax({paused: true})
 hammerBGHoverAnimation.to(hammerBGEle, .3, {ease: Power1.easeOut, fill: '#feae6e'})
 
+const hammerIconEle = document.querySelector('.hammer-icon')
+const hammerIconAnimation =  new TimelineMax({paused: true})
+hammerIconAnimation.to(hammerIconEle, .3, {ease: Power2.easeOut, fill: 'orange', stroke: 'red', strokeWidth: 5})
+
 
 const heartBGEle = document.querySelector('.heart-bg')
 
@@ -19,10 +23,12 @@ heartBGHoverAnimation.to(heartBGEle, .3, {ease: Power1.easeOut, fill: '#ff5e5e'}
 const iconHoverAnimateBind = (ele, animation) => {
     ele.addEventListener('mouseenter', () => {
         animation.play()
+        hammerIconAnimation.play()
     })
 
     ele.addEventListener('mouseleave', () => {
         animation.reverse()
+        hammerIconAnimation.reverse()
     })
 }
 
