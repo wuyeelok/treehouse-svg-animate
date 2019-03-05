@@ -7,11 +7,7 @@ gearBGHoverAnimation.to(gearBGEle, .3, {ease: Power1.easeOut, fill: '#3881cc'})
 const hammerBGEle = document.querySelector('.hammer-bg')
 
 const hammerBGHoverAnimation = new TimelineMax({paused: true})
-hammerBGHoverAnimation.to(hammerBGEle, .3, {ease: Power1.easeOut, fill: '#feae6e'})
-
-const hammerIconEle = document.querySelector('.hammer-icon')
-const hammerIconAnimation =  new TimelineMax({paused: true})
-hammerIconAnimation.to(hammerIconEle, .3, {ease: Power2.easeOut, fill: 'orange', stroke: 'red', strokeWidth: 5})
+hammerBGHoverAnimation.to(hammerBGEle, .3, {ease: Power1.easeOut, fill: '#feae6e', strokeWidth: 8})
 
 
 const heartBGEle = document.querySelector('.heart-bg')
@@ -36,6 +32,6 @@ const iconHoverAnimateBind = (ele, animations) => {
 
 iconHoverAnimateBind(gearBGEle, [gearBGHoverAnimation])
 
-iconHoverAnimateBind(hammerBGEle, [hammerBGHoverAnimation, hammerIconAnimation])
+iconHoverAnimateBind(hammerBGEle, [hammerBGHoverAnimation])
 
 iconHoverAnimateBind(heartBGEle, [heartBGHoverAnimation])
