@@ -14,7 +14,7 @@ svg {
 .gear-icon,
 .hammer-icon,
 .heart-icon {
-  transform-origin: 50% 25%;
+  transform-origin: 200px 50px;
 }
 
 /* --------------------------
