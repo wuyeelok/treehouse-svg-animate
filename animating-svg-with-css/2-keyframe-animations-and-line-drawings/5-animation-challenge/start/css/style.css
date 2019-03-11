@@ -31,19 +31,28 @@ svg {
 	}
 }
 
+@keyframes rotateyellow {
+
+  50% {
+    transform: scale(1.1) rotate(-5deg);
+    fill: yellow;
+  }
+
+}
 
 /* --------------------------
   SVG Styles
 --------------------------- */
 
 .star {
-  animation: movestarup .4s ease-in backwards;
+  transform-origin: 150% 150%;
+  animation: movestarup .4s ease-in backwards, rotateyellow .6s ease-out 1s;
 }
 
 .stars .star:nth-of-type(1) {
-  animation-delay: .3s;
+  animation-delay: .3s, 1.3s;
 }
 
 .stars .star:nth-of-type(3) {
-  animation-delay: .6s;
+  animation-delay: .6s, 1.6s;
 }
