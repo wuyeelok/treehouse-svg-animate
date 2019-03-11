@@ -40,6 +40,12 @@ svg {
 
 }
 
+@keyframes drawcircle {
+	100% {
+		stroke-dashoffset: 0;
+	}
+}
+
 /* --------------------------
   SVG Styles
 --------------------------- */
@@ -55,4 +61,11 @@ svg {
 
 .stars .star:nth-of-type(3) {
   animation-delay: .6s, 1.6s;
+}
+
+.stars-bg {
+  stroke-dasharray: 812px;
+  stroke-dashoffset: 812px;
+
+  animation: drawcircle .7s ease-out backwards 2s;
 }
